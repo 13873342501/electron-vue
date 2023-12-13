@@ -1,0 +1,290 @@
+/*每个页面公共css */
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+#app{
+	padding: 0;
+	width: 100%;
+	height: 100%;
+}
+/*每个页面公共css */
+.flex {
+	display: flex;
+}
+
+.flex_justify-content-center {
+	justify-content: center;
+}
+
+.flex_justify-content-between {
+	justify-content: space-between;
+}
+
+.flex_align-items-center {
+	align-items: center;
+}
+
+.flex_align-items-end {
+	align-items: flex-end;
+}
+
+.flex_flex-direction {
+	flex-direction: column;
+}
+.flex_center{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.text_hidden {
+	overflow: hidden;
+	/* word-break: break-all; */
+	text-overflow: ellipsis;
+	/* display: -webkit-box; */
+	white-space: nowrap;        /* 防止文本换行 */
+	
+	-webkit-line-clamp: 1;
+	/* -webkit-box-orient: vertical; */
+}
+
+/* 点击时样式 */
+.button-hover {
+	color: rgba(0, 0, 0, 0.6);
+	background-color: #fff;
+}
+
+checkbox .wx-checkbox-input,
+radio .wx-radio-input {
+	border-radius: 50%;
+	/* 圆角 */
+	width: 30rpx;
+	/* 背景的宽 */
+	height: 30rpx;
+	/* 背景的高 */
+	background: #fff;
+	margin-bottom: 10rpx;
+}
+
+/* 修改checked样式 */
+radio .wx-radio-input.wx-radio-input-checked::before,
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+	width: 50rpx;
+	height: 50rpx;
+	text-align: center;
+	line-height: 50rpx;
+	border-radius: 50%;
+	color: #fff;
+	background: #F97133;
+}
+
+/* 修改禁用且checked的样式 */
+radio .wx-radio-input.wx-radio-input-checked.wx-radio-input-disabled,
+checkbox .wx-checkbox-input.wx-checkbox-input-checked.wx-checkbox-input-disabled {
+	background: #998f8b;
+	border-color: #998f8b;
+	color: red;
+}
+
+/* #ifdef MP-ALIPAY  */
+checkbox {
+	border-radius: 50%;
+	width: 45rpx;
+	height: 45rpx;
+	background: #fff;
+}
+
+/*checkbox选中后样式  */
+checkbox-checked {
+	width: 45rpx;
+	height: 45rpx;
+	text-align: center;
+	line-height: 45rpx;
+	border-radius: 50%;
+	color: #fff;
+}
+
+/* #endif */
+
+
+
+/* ios底部适配区域 */
+.safe-area-inset-bottom {
+	width: 100%;
+	height: env(safe-area-inset-bottom);
+}
+
+/* button的边框隐藏 */
+button {
+	outline: none;
+	border: none;
+}
+
+button::after {
+	border: none;
+}
+
+/* 动画效果 */
+
+/* 从顶部进入 */
+@keyframes slide-in-blurred-top {
+	0% {
+		transform: translateY(-500px);
+		transform-origin: 50% 100%;
+		opacity: 0;
+	}
+
+	100% {
+		transform: translateY(0);
+		transform-origin: 50% 50%;
+		opacity: 1;
+	}
+}
+
+
+
+/* 从底部进入 */
+@keyframes slide-in-blurred-bottom {
+	0% {
+		transform: translateY(1000px);
+		transform-origin: 50% 100%;
+		opacity: 0;
+	}
+
+	100% {
+		transform: translateY(0);
+		transform-origin: 50% 50%;
+		opacity: 1;
+	}
+}
+
+/* 从左侧进入 */
+@keyframes slide-in-blurred-right {
+	0% {
+		transform: translateX(750px);
+		transform-origin: 50% 100%;
+		opacity: 0;
+	}
+
+	100% {
+		transform: translateX(0);
+		transform-origin: 50% 50%;
+		opacity: 1;
+	}
+}
+
+
+
+/* 从右滑入 */
+@keyframes slide-in-right {
+	0% {
+		transform: translateX(500px);
+		opacity: 0;
+	}
+
+	100% {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+/* 从底部向上 */
+@keyframes slide-in-blurred-bottom {
+	0% {
+		transform: translateY(500px);
+		transform-origin: 50% 100%;
+		opacity: 0;
+	}
+
+	100% {
+		transform: translateY(0);
+		transform-origin: 50% 50%;
+		opacity: 1;
+	}
+}
+
+/* 左右浮动 */
+@keyframes shake-vertical-left {
+
+	0%,
+	100% {
+		transform: translateX(0) translateY(0);
+	}
+
+	50% {
+		transform: translateX(4rpx) translateY(-4rpx);
+	}
+}
+
+/* 上下浮动 */
+@keyframes shake-vertical-down {
+
+	0%,
+	100% {
+		transform: translateY(0);
+	}
+
+	50% {
+		transform: translateY(4rpx);
+	}
+}
+
+@keyframes shake-vertical-up {
+
+	0%,
+	100% {
+		transform: translateY(0);
+	}
+
+	50% {
+		transform: translateY(-4rpx);
+	}
+}
+
+/* 摇摆 */
+@keyframes shake-left {
+
+	0%,
+	100% {
+		transform: rotate(0deg);
+	}
+
+	50% {
+		transform: rotate(0.5deg);
+	}
+}
+
+/* 底部摇晃 */
+@keyframes shake-bottom {
+	0%,
+	100% {
+		transform: rotate(0deg);
+		transform-origin: 50% 100%;
+	}
+
+	10% {
+		transform: rotate(2deg);
+	}
+
+	20%,
+	40%,
+	60% {
+		transform: rotate(-4deg);
+	}
+
+	30%,
+	50%,
+	70% {
+		transform: rotate(4deg);
+	}
+
+	80% {
+		transform: rotate(-2deg);
+	}
+
+	90% {
+		transform: rotate(2deg);
+	}
+}
